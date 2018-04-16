@@ -1,7 +1,9 @@
 class ProductsController < ApplicationController
 
 	def index
-		@products = Product.all
+		@q = Product.ransack(params[:q])
+		@products = @q.result(distinct: true)
+		# byebug
 	end
 
 	def show
@@ -19,5 +21,17 @@ class ProductsController < ApplicationController
 		end
 		redirect_to :back
 	end
-	
+
+	private
+
+	def validate_search_key
+	  @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
+
+	  @search_product_by_title = search_criteria(@query_string)
+	end
+
+	def search_criteria(query_string)
+	  { :title_cont => query_string }
+	end
+
 end
