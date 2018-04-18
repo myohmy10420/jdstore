@@ -7,6 +7,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.friendly.find(params[:id])
+    @product.click_rate += 1;
+    @product.save
   end
 
   def add_to_cart
