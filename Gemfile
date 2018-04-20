@@ -42,6 +42,7 @@ gem 'figaro'
 gem 'ransack'
 gem 'htmlbeautifier'
 gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
+gem 'omniauth-google-oauth2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
