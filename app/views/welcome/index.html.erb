@@ -30,10 +30,16 @@
             <div class="caption">
               <h3><%= product.title %></h3>
               <p><%= product.description %></p>
-              <p><span class="glyphicon glyphicon-eye-open"></span> <%= product.click_rate %></p>
-              <div id="comment-count">
-                <%= link_to product_path(product) do end %>
+              <div class="rwo">
+                <div class="col-xs-4">
+                  <span class="glyphicon glyphicon-eye-open"></span> <%= product.click_rate %>
+                </div>
+                <div class="col-xs-4">
+                  <span class="glyphicon glyphicon-envelope"></span>
+                  <div id="comment-count"><%= link_to product_path(product) do end %> </div>
+                </div>
               </div>
+              <br> <br>
               <%= link_to product_path(product) do %>
                 <button class="btn btn-primary">了解更多...</button>
               <% end -%>
