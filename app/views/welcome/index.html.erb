@@ -31,6 +31,9 @@
               <h3><%= product.title %></h3>
               <p><%= product.description %></p>
               <p><span class="glyphicon glyphicon-eye-open"></span> <%= product.click_rate %></p>
+              <div id="comment-count">
+                <%= link_to product_path(product) do end %>
+              </div>
               <%= link_to product_path(product) do %>
                 <button class="btn btn-primary">了解更多...</button>
               <% end -%>
@@ -41,3 +44,4 @@
     </div>
   </div>
 </section>
+<script id="dsq-count-scr" src="http://kurt-jdstore.disqus.com/count.js" async></script>
