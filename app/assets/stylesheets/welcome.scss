@@ -1,9 +1,21 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.section {
+  &-title {
+    margin-bottom: 60px;
+  }
+  &-intro {
+    padding: 40px 0px;
+  }
+  &-popProducts {
+    padding: 40px 0px;
+    background-color: #6f72c3;
+  }
+}
 .container {
   &-header {
-    background-image: image-url('city_view.jpg');
+    background-image: image-url("city_view.jpg");
     background-size: cover;
     background-position: 50% 25%;
     height: 400px;
@@ -24,5 +36,20 @@ body{font-family:Lato,'Helvetica Neue',Helvetica,Arial,sans-serif}h1,h2,h3,h4,h5
   display: inline-block;
   a {
     color: #000;
+  }
+}
+
+.images {
+  &-intro {
+    width: 200px;
+    height: 200px;
+    border-radius: 9999px;
+    margin-bottom: 30px;
+  }
+}
+
+.font {
+  &--pale {
+    color: #888;
   }
 }

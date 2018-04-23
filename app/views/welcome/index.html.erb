@@ -1,21 +1,50 @@
     <!-- Masthead -->
 <header class="text-center">
-  <div class="container container-header">
-    <div class="row">
-      <div class="col-xl-9 mx-auto">
-        <h1 class="font font--white">Choose the equipment to build your life in city</h1>
+  <div class="container-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="font font--white">Choose the equipment to build your life in city</h1>
+        </div>
+        <center>
+          <%= link_to products_path do %>
+            <button class="btn btn-lg btn-primary">GO TO SHOP</button>
+          <% end -%>
+        </center>
       </div>
-      <center>
-        <%= link_to products_path do %>
-          <button class="btn btn-lg btn-primary">GO TO SHOP</button>
-        <% end -%>
-      </center>
     </div>
   </div>
 </header>
-<section>
+
+<section class="section-intro">
+  <h3 class="text-center section-title">找尋自己品味的商品</h3>
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-sm-4">
+        <%= image_tag("camera.jpg", class:"images images-intro images-images--left") %>
+        <h4 class="font font--pale">尋找質感</h4>
+        <p class="font font--pale">上百種商品精選商品</p>
+        <p class="font font--pale">找到屬於自己的質感</p>
+      </div>
+      <div class="col-sm-4">
+        <%= image_tag("fasions.jpg", class:"images images-intro images-images--left") %>
+        <h4 class="font font--pale">獨特風格</h4>
+        <p class="font font--pale">24小時立即下單</p>
+        <p class="font font--pale">找到屬於自己的流行</p>
+      </div>
+      <div class="col-sm-4">
+        <%= image_tag("dream.jpg", class:"images images-intro images-images--left") %>
+        <h4 class="font font--pale">建立夢想</h4>
+        <p class="font font--pale">購買自己的配備</p>
+        <p class="font font--pale">建立屬於自己的生活風格</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-popProducts">
   <center>
-    <h3>熱門商品</h3>
+    <h3 class="text-center section-title "><sapn class="font--white">我們向您推薦</sapn></h3>
   </center>
   <div class="container">
     <div class="row">
