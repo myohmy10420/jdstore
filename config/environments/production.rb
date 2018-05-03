@@ -84,7 +84,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'kurt-jdstroe.heroku.com' }
+  config.action_mailer.default_url_options = { host: 'store.kurthsu.tw' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = config_for(:email).symbolize_keys
 
