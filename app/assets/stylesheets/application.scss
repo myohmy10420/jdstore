@@ -18,16 +18,21 @@
 @import "bootstrap";
 @import "font-awesome";
 
-.navbar-main {
-  background-color: #6f59a5;
-  margin-bottom: 2px;
-  border: 0px;
-  border-radius: 0px;
-}
-.navbar-header--center {
-  position: relative;
-  left: 46%;
-}
 .text--white {
   color: #fff;
+}
+.navbar-main_header {
+  background-color: #f3b14f;
+  border: 0px;
+  border-radius: 0px;
+  margin: 0;
+  .navbar-brand {
+    color: #fff;
+    font-weight: bold;
+  }
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+  font-weight: bold;
 }
