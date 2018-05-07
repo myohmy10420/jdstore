@@ -1,3 +1,23 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.products {
+  padding: 20px 0px;
+  li {
+    list-style-type: none;
+    margin-left: 20px;
+  }
+  .searchBar {
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    &__block {
+      margin: 40px 0px;
+    }
+    &-form {
+      max-width: 200px;
+    }
+  }
+}
