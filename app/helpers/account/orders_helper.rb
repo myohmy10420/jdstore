@@ -2,19 +2,19 @@ module Account::OrdersHelper
   def render_order_human_state(order)
     case order.aasm_state
     when "order_placed"
-      content_tag(:span, "已下單", class: "label label-default")
+      content_tag(:span, "已下單", class: "label label-success")
     when "paid"
-      "已付款"
+      content_tag(:span, "已付款", class: "label label-danger")
     when "shipping"
-      "處理中"
+      content_tag(:span, "處理中", class: "label label-danger")
     when "shipped"
-      "處理完畢"
+      content_tag(:span, "處理完畢", class: "label label-danger")
     when "order_cancelled"
-      "訂單取消"
+      content_tag(:span, "訂單取消", class: "label label-default")
     when "good_returned"
-      "訂單完成"
+      content_tag(:span, "訂單完成", class: "label label-warning")
     else
-      "Unknown"
+      content_tag(:span, "Unknown", class: "label label-default")
     end
   end
 end

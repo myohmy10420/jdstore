@@ -1,19 +1,23 @@
-<h2>订单列表 </h2>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>訂單狀態</th>
-      <th>生成时间</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @orders.each do |order| %>
-      <tr>
-        <td> <%= link_to(order.id, order_path(order.token)) %> </td>
-        <td> <%= render_order_human_state(order) %> </td>
-        <td> <%= order.created_at.to_s(:long) %> </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="order">
+  <div class="container">
+    <h2>訂單列表 </h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>訂單內容</th>
+          <th>訂單狀態</th>
+          <th>生成時間</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @orders.each do |order| %>
+          <tr>
+            <td width="120px"> <%= link_to(truncate(order.product_lists.first.product_name, length: 8), order_path(order.token)) %> </td>
+            <td> <%= render_order_human_state(order) %> </td>
+            <td> <%= order.created_at.to_s(:long) %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

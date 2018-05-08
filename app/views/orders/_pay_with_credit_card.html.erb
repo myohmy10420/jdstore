@@ -1,4 +1,4 @@
-<%= form_tag action="https://ccore.spgateway.com/MPG/mpg_gateway", method: :post do  %>
+<%= form_tag action="https://ccore.spgateway.com/MPG/mpg_gateway", style: "display: inline-block;", method: :post do  %>
 
   <%= hidden_field_tag "MerchantID",      Pay2go.merchant_id %>
   <%= hidden_field_tag "HashKey",         Pay2go.hash_key %>
@@ -15,5 +15,5 @@
   <%= hidden_field_tag "CREDIT",          "1" %>
   <%= hidden_field_tag "ReturnURL",       pay2go_cc_notify_order_url(order.token) %>
 
-  <%= submit_tag "使用信用卡付款", class: "btn btn-danger btn-lg btn-default" %>
+  <%= submit_tag "使用信用卡付款", class: "btn btn-danger btn-default" %>
 <% end %>
