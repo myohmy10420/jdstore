@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @products_pop_1to4 = Product.where(id: 1..4).order("click_rate DESC")
+    @products_pop_1to4 = Product.all.order("click_rate DESC").limit(4)
   end
 end

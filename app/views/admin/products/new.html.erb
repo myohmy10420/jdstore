@@ -1,19 +1,22 @@
 <h2> New Product </h2>
 <%= simple_form_for [:admin, @product] do |f| %>
   <div class="group">
-    <%= f.input :title %>
+    <%= f.input :title, label: "商品名稱", error: "請輸入商品名稱" %>
   </div>
   <div class="group">
-    <%= f.input :description %>
+    <%= f.input :description, label: "商品敘述" %>
   </div>
   <div class="group">
-    <%= f.input :quantity %>
+    <%= f.input :quantity, label: "商品數量", error: "請輸入數字" %>
   </div>
   <div class="group">
-    <%= f.input :price %>
+    <%= f.input :price, label: "商品單一價格", error: "請輸入數字" %>
   </div>
   <div class="group">
-    <%= f.input :image, as: :file %>
+    <%= f.input :category, label: "商品種類", as: :select, collection: Product::CATEGORY_CLASS, prompt: "請選擇", error: "請選擇種類" %>
+  </div>
+  <div class="group">
+    <%= f.input :image, error: "請上傳圖片", label: "商品圖片", as: :file %>
   </div>
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 <% end %>
