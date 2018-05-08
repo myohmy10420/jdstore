@@ -8,7 +8,6 @@ class OrdersController < ApplicationController
     @order.total = current_cart.total_price
 
     if @order.save
-
       current_cart.cart_items.each do |cart_item|
         product_list = ProductList.new
         product_list.order = @order
@@ -16,6 +15,11 @@ class OrdersController < ApplicationController
         product_list.product_price = cart_item.product.price
         product_list.quantity = cart_item.quantity
         product_list.save
+      end
+
+      current_cart.cart_items.each do |cart_item|
+        @product = cart_item.product
+        @product.decrease_products_quantity!(@product, cart_item)
       end
 
       current_cart.clean!

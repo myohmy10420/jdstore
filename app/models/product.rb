@@ -10,4 +10,11 @@ class Product < ApplicationRecord
   extend FriendlyId
   friendly_id :title, use: :slugged
   mount_uploader :image, ImageUploader
+
+  def decrease_products_quantity!(product, cart_item)
+    @product = Product.find(product.id)
+    decrease_total = cart_item.quantity
+    @product.quantity -= decrease_total
+    @product.save
+  end
 end

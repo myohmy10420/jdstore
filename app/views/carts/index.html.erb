@@ -49,7 +49,7 @@
       </span>
     </div>
     <div class="checkout clearfix">
-      <%= link_to("確認結帳", checkout_carts_path, method: :post, class: "btn btn-lg btn-warning pull-right") %>
+      <%= link_to("確認結帳", checkout_carts_path(current_cart), method: :post, class: "btn btn-lg btn-warning pull-right") %>
     </div>
     <hr>
   </div>
