@@ -40,3 +40,15 @@ body {
   color: #fff;
   font-weight: bold;
 }
+
+.devise {
+  padding: 100px 0px;
+  background-color: #fff;
+  &-form {
+    padding: 40px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    display: inline-block;
+    background-color: lighten(#000, 93.5%);
+  }
+}

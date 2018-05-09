@@ -1,0 +1,28 @@
+<div class="devise text-center">
+  <div class="devise-form">
+    <h2 style="margin-top: 0;">註冊</h2>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="form-group" style="width: 300px;">
+        <%= f.label "電子信箱" %>
+        <%= f.email_field :email, autofocus: true, class: "form-control", required: true %>
+      </div>
+
+      <div class="form-group" style="width: 300px;">
+        <%= f.label "密碼" %>
+        <%= f.password_field :password, class: "form-control", required: true %>
+      </div>
+
+      <div class="form-group" style="width: 300px;">
+        <%= f.label "確認密碼" %>
+        <%= f.password_field :password_confirmation, class: "form-control", required: true %>
+      </div>
+
+      <div class="form-group" style="width: 300px;">
+        <%= f.submit "開始註冊", class: "btn btn-lg btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
