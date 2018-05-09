@@ -1,7 +1,12 @@
 class ProductsController < ApplicationController
 
   def index
-    @q = Product.ransack(params[:q])
+    if params["format"] == "全部" || !params["format"]
+      category_products = Product.all
+    else
+      category_products = Product.where(:category => params["format"])
+    end
+    @q = category_products.ransack(params[:q])
     @products = @q.result(distinct: true)
   end
 
@@ -16,9 +21,9 @@ class ProductsController < ApplicationController
 
     if !current_cart.products.include?(@product)
       current_cart.add_product_to_cart(@product)
-      flash[:notice] = "你已成功将 #{@product.title} 加入购物车"
+      flash[:notice] = "你已經成功將 #{@product.title} 加入購物車"
     else
-      flash[:warning] = "你的购物车内已有此物品"
+      flash[:warning] = "你的購物車内已有此物品"
     end
     redirect_to :back
   end

@@ -16,9 +16,10 @@
           <div class="searchBar__block">
             <h4>商品分類：</h4>
             <ui>
-              <li>電腦,筆電,平板</li>
-              <li>耳機,鍵盤等周邊</li>
-              <li>辦公桌辦公室小物</li>
+              <li><%= link_to("電腦硬體", products_path("電腦硬體")) %></li>
+              <li><%= link_to("週邊設備", products_path("週邊設備")) %></li>
+              <li><%= link_to("辦公室擺設", products_path("辦公室擺設")) %></li>
+              <li><%= link_to("全部", products_path("全部")) %></li>
             </ui>
           </div>
         </div>
