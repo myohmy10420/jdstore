@@ -42,5 +42,7 @@ Rails.application.routes.draw do
     resources :orders
   end
 
+  get '/welcome' => 'welcome#index'
+
   root 'welcome#index'
 end
